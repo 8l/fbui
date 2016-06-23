@@ -1,0 +1,9 @@
+
+Launcher program. 
+
+Based on ToDo, this program displays a list. 
+
+Unlike ToDo, clicking on a list item starts a program, and exits the launcher.
+
+Launcher is an Ephemeral program i.e. intended to be used only for a new moments.
+

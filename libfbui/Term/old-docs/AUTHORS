@@ -1,0 +1,37 @@
+
+
+From ggiterm:
+
+Main (and only) author:
+	Aurelien Reynaud (dedale1 at users dot sourceforge dot net)
+
+
+First of all, thank you for taking interest in this project!
+
+I have been following the GGI/KGI effort for many years now with a strong interest,
+as I see it as the (admittedly long term) ultimate future for console and graphics
+subsystems in Unix-like OSes.
+However, I never contributed any code to the core projects, mostly due to a lack of
+time and ageing programming skills (which date back to my school years!).
+
+But the time had come to give back to the community more than 'thanks for the hard
+work'. So I scratched my head and wondered what kind of useful piece of software I
+could put together, which would both increase my programming skills to a level where
+I can later consider contributing kernel code, and still help the GGI project as a
+whole.
+
+A terminal application for GGI fits admirably into this scheme:
+- GGI programming
+- console subsystem
+- use of the Freetype library
+- i18n mysteries (conversion between character codes, unicode)
+- GNU build tools (automake, autoconf, etc...)
+
+I decided to start from scratch, but used as a source of inspiration an already
+existing project: nixterm, written by Andrew Apted. As of today, this project seems
+to be abandoned (or considered done) by his author, but I nonetheless would like to
+thank him here for the good work he did.
+
+
+
+  Aurelien Reynaud, 06/26/2003

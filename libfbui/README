@@ -1,0 +1,42 @@
+
+Greetings,
+
+This is FBUI, whose purpose is to implement an in-kernel 
+GUI that offers minimal functionality within a tiny space;
+and FBUI Library, which exists to make using FBUI's ioctls
+simpler. Why in-kernel? To put a limit on GUI bloat.
+
+FBUI is not intended to satisfy all users' needs.
+For instance, the typical home computer user will not want 
+to use it since it doesn't support overlapping windows,
+which are a bad idea anyway.
+
+However for those of us who accept its limitations
+and requirements, and see virtue in its simplicity and
+lack of bloat, it may be preferable.
+
+Enjoy,
+
+Zack Smith
+fbui@comcast.net
+
+=====================================================
+
+Installation Instructions
+
+1.
+Before trying to compile, don't forget to replace 
+	/usr/include/linux with a symlink to 
+	/usr/src/linux/include/linux.
+
+2.
+To make all, run ./makeall.sh in the libfbui directory.
+
+3.
+To run most of the FBUI applications and tools
+in the 5th virtual console, along with the panel manager,
+	run ./start2.sh 4
+then press Alt-F5.
+
+-end-
+

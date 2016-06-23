@@ -1,0 +1,48 @@
+
+FBUI
+Copyright 2004 by Zack Smith.
+
+------ ~ ------
+
+FBUI is based on several vital ideas:
+
+1. bloated programs are hideous, wasteful, stupid and avoidable.
+
+2. a windowing system should never use 20 megabytes,
+   as XFree86 does; it is bloated.
+
+3. by putting the GUI into the kernel, an upper limit
+   is imposed on bloat in the core GUI code since all 
+   kernel code must be small and fast.
+
+4. incidentally overlapping windows were always a bad idea;
+   nobody really enjoy shuffling and resizing windows, 
+   any more than they enjoy shuffling papers.
+
+5. it's not a good idea to put drivers in userspace,
+   which is what X and some framebuffer programs do.
+
+6. having direct fb access may nevertheless be useful
+
+FBUI addresses these ideas in the following ways:
+
+1. abandon X
+
+2. abandon X
+
+3. keep FBUI tiny : it will always be < 32kB for 2-D graphics
+
+4. two solutions:
+	a. FBUI allows windows on any virtual console
+	b. an OPTIONAL "window manager" process is permitted
+	   to move windows around, resize them, and
+	   in particular: flip them in and out.
+
+5. FBUI implements basic drawing and allows
+   implementation of accelerated routines; however
+   even the basic drawing routines are quite fast.
+
+6. FBUI does not impede any application from mmapping
+   the framebuffer anyway.
+
+

@@ -1,0 +1,32 @@
+
+* fbpm: implement support for Ephemeral apps
+
+* test mouse pointer focus
+
+* investigate multi-test problem
+
+* implement 16-bit fonts, add support for Unicode
+
+* investigate PCF first-char problem....abandon PCF?
+
+* need to flesh out minimum-maximum window size concepts
+
+* should permit tool program to specify a width-height ratio
+
+* add support for single overlapping "dialog" window?
+
+---
+
+* add the following to FBUI:
+	- anti-aliased line draw
+	- put pixels w/transparency
+
+* add to FBWM:
+	- program list, move/maximize/hide/unhide
+
+* more applications:
+	- launch menu (Ephemeral)
+	- xvid player
+	- xine UI
+	- rtf editor
+

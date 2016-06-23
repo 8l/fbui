@@ -1,0 +1,12 @@
+
+* fbview doesn't always receive its MoveResize event from fbpm
+
+* Sometimes, when the mouse pointer is over a window or the 
+  background after a VC switch, its background bits are invalid.
+
+* Call to allocate_vc is not working.
+
+* Sometimes keyfocus isn't initially active for solo windows.
+
+* Multi-window test not working?
+

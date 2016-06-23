@@ -1,0 +1,19 @@
+
+
+Code cleanup, speed improvements:
+- use getopt() to parse command line options
+- use freetype caching capabilities
+- use directbuffers ?
+- render strings instead of characters
+- investigate the ggiFlush() "bug"
+
+User visible features:
+- improve autogen.sh for use with autotools versions previous to 1.7
+- look into libtool for static/dynamic/mixed building
+- add --default-term option
+- add --execute option
+- make it possible to use multiple/variable width fonts
+- make complete and documented ggiterm.terminfo
+- automate terminfo -> termcap (cf autogen.sh)
+- test other color depths
+- create man page

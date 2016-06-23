@@ -1,0 +1,4 @@
+
+Fonts should be in /usr/X11/lib/fonts/75dpi, and they should NOT
+be gzipped.
+

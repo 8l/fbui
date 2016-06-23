@@ -1,0 +1,14 @@
+
+IMAGE VIEWER FOR FBUI
+
+If you don't specify a geometry e.g. -geo500x500+10+10, fbview tries to take the
+entire screen.
+
+Controls:
+
+Key		Effect
+---------	----------------
+spacebar 	next image
+q 		quit
+g 		toggle grayscale
+

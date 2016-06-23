@@ -1,0 +1,110 @@
+
+Oct 2004, plinius@comcast.net: conversion to fbui
+
+
+-------------------------------------------------
+
+12/02/2003 - Version 0.6.2 released
+The previous in-depth changes broke compilation on many architectures. This
+version has been tested and builds on linux, freebsd, openbsd, macosx and
+solaris. Hopefully it works for all of them...
+- switched form mbrtowc/wcrtomb to mbtowc/wctomb
+- added custom iswprint() for systems lacking it
+- configure/build fixes for *bsd and macosx
+
+11/28/2003 - Version 0.6.1 released
+
+Heavily reworked code, but few user-visible changes. Default TERM value is now
+"ggiterm" instead of "ansi", whose definition is not consistent across systems.
+We are also vt100-compatible for systems where ggiterm definition cannot be added.
+New features:
+- i18n in input as well as output
+- vt100 compatibility (according to the terminal definitions of supported systems)
+Fixes:
+- Solaris configure/build fixes
+- Require freetype2 v2.0.9. Earlier versions didn't have FT_Get_First_Char()
+- call ggiFlushRegion() after each character output. This shouldn't be necessary
+  but but it kills the longstanding "disappearing lines" bug with LibGGI > 2.0.1
+General:
+- removed iconv dependancy. Now we use native libc multibyte handling
+  (--encoding option deprecated)
+- use __func__ c99 facility to output errors and debugging messages
+- use GGI asynchronous mode to speed up the X target
+  (alas nullified by too many calls to ggiFlushRegion())
+- control-sequences parser entirely rewritten
+- added terminfo/termcap entries for ggiterm
+
+
+10/30/2003 - Version 0.6 released
+
+Major new feature: colors! Includes also many bugfixes and improvements to the build system,
+thanks to the feedback on the first users.
+New features:
+- invisible mode implemented
+- bold mode implemented
+- underline mode implemented
+- colors implemented
+- Tab stops implemented
+- User strings u6 u7 u8 u9 implemented
+- SHIFT-TAB mapped to ANSI BackTab key
+Fixes:
+- Better (but still not perfect) handling of modifier keys
+- segfault when font is rejected and debuglevel is > 0
+- non destructive tabs, as requested by ANSI
+- error at compilation when FT support not compiled in
+- Fixed incorrect behaviour of Backspace.
+- Freetype won't do aliasing if color depth <= 8
+- rounding error in cell size computing caused the last character's column
+  to be overwritten by the next char
+- Now renders OK very small font sizes
+- only send one ggi event at a time to the shell. Hopefully fixes the "hold down
+  the enter key" bug
+Build system:
+- Added minimalistic forkpty() replacement for when the system doesn't have it
+- Removed remaining warnings caused by size_t != int
+- cleanup of configure.in
+- fixed typo in configure.in
+  Now ./configure --with-ggi-prefix=DIR behaves as expected
+
+
+10/16/2003 - Bugfix version 0.5.1 released
+
+No new features added, but many bugfixes, both in code and build system.
+Many thanks to Christoph Egger for his help and patience!
+Fixes:
+- More careful typing wrt size_t to avoid warnings
+- Correct handling of Backspace (the bug appears when using tcsh, but bash doesn't care)
+- fixed coredump on exit when no font specified
+- compile error when freetype is not present on the system
+Build system:
+- ggiterm now uses autotools 1.7
+- libggi in nonstandard places is a configure option
+- handle the case when forkpty() is in libc rather than in libutil (BSDs, OSX, ...)
+- Modified Makefile.am to require freetype v2.1.4 when compiling on MacOS X
+  (the freetype build system is buggy on OSX for versions < 2.1.4)
+
+
+10/10/2003 - Version 0.5 released
+
+Well, it's beginning to come along nicely... ggiterm is now quite useable.
+- Most of the ANSI terminal capabilities have been implemented: cursor motions,
+alternate charset, reverse video, area clearing, scrolling, insert/delete lines
+and characters.
+- Fixed width fonts are handled mostly correctly, with occasional minor graphic
+glitches. Variables width fonts are another matter!
+- Key repeat is supported
+- All features are optional: freetype support, iconv support, debugging
+- Terminal size is dynamic
+- Font size is now an option
+- The ugly green grid now only appears in debugging mode
+
+
+06/26/2003 - Initial release
+
+This is just a proof of concept, barely useable.
+- an ugly green grid, used to calibrate the fonts is still visible
+- should work on the X target, but don't ask for more
+- input doesn't recognize modifier keys
+- displayed characters are supposed to be UTF-8
+- lots of debugging output
+- slow

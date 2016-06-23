@@ -1,0 +1,19 @@
+
+Frame Buffer Panel Manager (fbpm)
+
+The panel manager is an approach to organizing windows
+based on my own personal usage patterns, more or less.
+
+Use alt-<number key> to flip to a specific windows.
+Use alt-Tab to flip to the next app window.
+Use alt-Backspace to exit, killing all windows and
+	their processes.
+
+Eventually I will add the ability to divide the main area
+between two or three applications, especially since
+the concept of an 'ephemeral' application such as a 
+calculator or to-do list requires that.
+
+Zack Smith
+
+

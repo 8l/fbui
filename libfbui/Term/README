@@ -1,0 +1,24 @@
+Greetings,
+
+This program, fbterm, is my port of ggiterm to use FBUI, which
+is my in-kernel framebuffer GUI. The non-FBUI related code was
+written by Aurelien Reynaud. Merci Aurelien!
+
+I used ggiterm because rxvt and xterm seemed more tightly tied to X.
+Because fbterm's based on ggiterm, it inherits any minor defects 
+that ggiterm may or may not have had. However it basically works well.
+
+To use it, compile it with the makefile. The file libfbui.a is 
+expected to be in the parent directory.
+
+Use 'tic' to compile the terminfo file.
+
+Enjoy,
+Zack Smith
+
+----------
+My changes:
+* Oct 15, 2004: added buffers for expose events
+* Oct 19, 2004: added -c and -geo support
+* Nov 2, 2004: updated for multi-window FBUI
+
